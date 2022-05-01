@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;600&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      background-color: #212121;
+  color: #fff;
 }
 
 a {
@@ -13,4 +17,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  #memoji-img {
+    display: none;
+  }
+}
+
+footer {
+  min-height: 17.1rem;
+  background: #262626;
 }
