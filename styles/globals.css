@@ -29,3 +29,9 @@ footer {
   min-height: 17.1rem;
   background: #262626;
 }
+
+@media screen and (max-width: 900px) {
+  .desk-only {
+    display: none;
+  }
+}

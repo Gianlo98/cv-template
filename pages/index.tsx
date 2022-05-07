@@ -9,52 +9,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import LinkBtn from '../components/LinkBtn';
+import MenuBtn from '../components/MenuBtn';
+
 const Home: NextPage = () => {
 
-  const CustomBtn = styled(Button)({
-    backgroundColor: 'transparent',
-    color: "#FFF",
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-      backgroundColor: 'transparent',
-      borderColor: 'transparent',
-      color: '#ea1c24',
-    },
-    '&:active': {
-      backgroundColor: 'transparent',
-      borderColor: 'transparent',
-      color: '#ea1c24',
-    }
-  });
 
 
   return (
-    <div>
+    <>
       <Head>
         <title>Gianlorenzo Occhipinti</title>
         <meta name="description" content="Gianlorenzo Occhipinti" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav data-sticky-wrap="true" data-sticky-class="stuck" style={{ opacity: 1, position: "fixed", top: 0, left: 0, width: "100%", color: "white" }}>
+      <nav style={{ opacity: 1, top: 0, left: 0, width: "100%", color: "white", backgroundColor: "#212121", padding: 10}}>
         <Grid container>
-          <Grid item xs={6}></Grid>
-          <Grid item xs={4}>
-            <CustomBtn variant="text" href="#home">Home</CustomBtn>
-            <CustomBtn variant="text" href="#about">About</CustomBtn>
-            <CustomBtn variant="text" href="#experiences">Experiences</CustomBtn>
-            <CustomBtn variant="text" href="#projects">Projects</CustomBtn>
-            <CustomBtn variant="text" href="#contacts">Contacts</CustomBtn>
+          <Grid item xs={7}></Grid>
+          <Grid item xs={5} className={"desk-only"}>
+            <MenuBtn variant="text" href="#home">Home</MenuBtn>
+            <MenuBtn variant="text" href="#about">About</MenuBtn>
+            <MenuBtn variant="text" href="#experiences">Experiences</MenuBtn>
+            <MenuBtn variant="text" href="#projects">Projects</MenuBtn>
           </Grid>
         </Grid>
       </nav>
@@ -77,39 +53,53 @@ const Home: NextPage = () => {
                 I'm a software engineer based in Switzerland, with passion for building and designing software.
               </p>
               <p>
-              <IconButton aria-label="add an alarm">
-                <EmailIcon />
-              </IconButton>
-              <IconButton  aria-label="add an alarm">
-                <GitHubIcon />
-              </IconButton>
-              <IconButton aria-label="add an alarm">
-                <LinkedInIcon />
-              </IconButton>
-            </p>
+                <a href="mailto:gianlorenzo.occhipinti@gmail.com">
+                  <IconButton aria-label="add an alarm" >
+                    <EmailIcon />
+                  </IconButton>
+                </a>
+                <IconButton aria-label="add an alarm" href="https://github.com/Gianlo98" target="_blank">
+                  <GitHubIcon />
+                </IconButton>
+                <IconButton aria-label="add an alarm" href="https://www.linkedin.com/in/gianlorenzo-o/" target="_blank">
+                  <LinkedInIcon />
+                </IconButton>
+              </p>
             </div>
           </Grid>
-          <Grid item md={6}>
+          <Grid item md={6} className={"desk-only"}>
             <img src='/MemojiGianlo.png' alt='profile' style={{ width: "100%", height: "auto" }} id={"memoji-img"} />
           </Grid>
         </Grid>
       </Container>
       <Container id="about">
         <div style={{ textAlign: "center", marginBottom: 50 }}>
-          <Typography variant="h3" component="h3" sx={{ marginTop: 5 }}>
-            About me
+          <Typography variant="h3" component="h3" sx={{ marginTop: 5, marginBottom: 10 }}>
+            <span style={{ border: "3px solid #fff", padding: 20 }}>About me</span>
           </Typography>
         </div>
         <Grid container
           direction="row"
-          justifyContent="justify"
+          justifyContent="center"
           alignItems="center"
         >
-          <Grid item xs={6}>
-            <img src="/FotoGianlo2.jpg" alt='profile' style={{ width: "50%", height: "auto" }} />
+          <Grid item xs={6} style={{ textAlign: "center" }}>
+            <img src="/FotoGianlo.jpg" alt='profile' style={{ width: "50%", height: "auto" }} />
           </Grid>
-          <Grid item xs={6}>
-            I would consider myself as a curious person, always looking for inspiration, who likes to try new activities or new techs. Occasionally I play sports with my friends, and I’m a big fan of team-based games.
+          <Grid item xs={5} style={{ fontSize: "1.1em" }} >
+            <p>
+              I'm Gianlorenzo Occhipinti, a software engineer with front-end and back-end skills.
+              I am passionate about leveraging my knowledge to decipher challenging problems and create delightful experiences.
+              In addition, I am a curious person, always looking for inspiration, who likes to try new activities or new techs.
+            </p>
+            <p>
+              I like to develop the architecture of software and the implementation of its logic.
+            </p>
+            <p>
+              Being a diligent, hardworking, and result-oriented software engineer, I always work towards achieving the best result on each project I lay my hands on.
+            </p>
+
+            <LinkBtn variant="text">Download CV</LinkBtn>
           </Grid>
         </Grid>
       </Container>
@@ -170,40 +160,66 @@ const Home: NextPage = () => {
             spacing={3}
           >
             <Grid item md={4}>
-              <Paper elevation={3} style={{ padding: 30, height: "100%" }}>
-                <img src="https://mangayo.it/modules/an_logo/img/d5721895b0230eef211ba65f3bdc34cf.svg" style={{ backgroundColor: "#FFF", borderRadius: 5, height: 100, width: 100, padding: 5 }} />
-                <br />
-                MangaYo! is my most important client.
-                I have been working with them since their first day. I helped them to go online and launch their business activity.
-                Their business is constantly increasing (more than 8,000 monthly orders) and I'm currently working to expand the e-commerce features every day.
-              </Paper>
+              <a href="https://mangayo.it" target="_blank">
+                <Paper elevation={3} style={{ padding: 30, height: "100%" }}>
+                  <img src="https://mangayo.it/modules/an_logo/img/d5721895b0230eef211ba65f3bdc34cf.svg" style={{ backgroundColor: "#FFF", borderRadius: 5, height: 100, width: 100, padding: 5 }} />
+                  <p>
+                    MangaYo! is my most important client.
+                    I have been working with them since their first day. I helped them to go online and launch their business activity.
+                    Their business is constantly increasing (more than 8,000 monthly orders) and I'm currently working to expand the e-commerce features every day.
+                  </p>
+                </Paper>
+              </a>
             </Grid>
             <Grid item md={4}>
-              <Paper elevation={3} style={{ padding: 30, height: "100%" }}>
-                <img src="/Arcan.png" style={{ height: 100, width: 100 }} />
-                <br />
-                Arcan is a startup born from a university research. I'm currently working with them in the visualization field leading the develop process of their user interface
-              </Paper>
-
+              <a href="https://arcan.tech" target="_blank">
+                <Paper elevation={3} style={{ padding: 30, height: "100%" }}>
+                  <img src="/Arcan.png" style={{ height: 100, width: 100 }} />
+                  <p>
+                    Arcan is a startup born from a university research.
+                    I'm currently working with them in the visualization field leading the develop process of their user interface
+                  </p>
+                </Paper>
+              </a>
             </Grid>
             <Grid item md={4}>
               <Paper elevation={3} style={{ padding: 30, height: "100%" }}>
                 <img src="/Dakimba.jpg" style={{ backgroundColor: "#FFF", borderRadius: 5, height: 100, width: 100, padding: 5 }} />
-                <br />
-                Dakimba.com was a start up with the aim to revolutionize the travel industry.
-                Our project included a patent to automatize check in operations in hotel and bnb facilities (I'm currently the inventor) and also a platform to book rooms with the possibility to take a 3D tour of the room.
+                <p>
+                  Dakimba.com was a start up with the aim to revolutionize the travel industry.
+                  Our project included a patent to automatize check in operations in hotel and bnb facilities (I'm currently the inventor)
+                  and also a platform to book rooms with the possibility to take a 3D tour of the room.
+
+                </p>
               </Paper>
 
             </Grid>
           </Grid>
         </div>
       </Container>
-      <footer style={{ marginTop: 400 }}>
+      <footer style={{ marginTop: 400, padding: 100 }}>
         <Container>
-          <div> <p>© Copyright 2021. All right reserved</p> </div>
+          <Grid container>
+          <Grid item xs={10}>
+            <p>© Copyright 2022. All right reserved</p>
+          </Grid>
+          <Grid item xs={2}>
+          <a href="mailto:gianlorenzo.occhipinti@gmail.com">
+                  <IconButton aria-label="add an alarm" >
+                    <EmailIcon />
+                  </IconButton>
+                </a>
+                <IconButton aria-label="add an alarm" href="https://github.com/Gianlo98" target="_blank">
+                  <GitHubIcon />
+                </IconButton>
+                <IconButton aria-label="add an alarm" href="https://www.linkedin.com/in/gianlorenzo-o/" target="_blank">
+                  <LinkedInIcon />
+                </IconButton>
+          </Grid>
+        </Grid>
         </Container>
       </footer>
-    </div>
+    </>
   )
 }
 

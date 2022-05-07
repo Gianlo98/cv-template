@@ -1,4 +1,5 @@
 import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import LinkBtn from "../LinkBtn";
 import { CvCardSpecs } from "./CvCard.types";
 
 export function CvCard(cvCardSpecs: CvCardSpecs) {
@@ -14,7 +15,7 @@ export function CvCard(cvCardSpecs: CvCardSpecs) {
                 {cvCardSpecs.children}
             </Typography>
             {cvCardSpecs.link && <CardActions style={{ float: "right" }}>
-                <Button size="small" href={cvCardSpecs.link} target="_blank">More details</Button>
+                <LinkBtn size="small" href={cvCardSpecs.link} target="_blank">More details</LinkBtn>
             </CardActions>}
         </CardContent>
     </Card>
